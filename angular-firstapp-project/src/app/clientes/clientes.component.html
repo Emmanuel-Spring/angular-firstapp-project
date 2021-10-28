@@ -1,10 +1,12 @@
+<br><br>
+
 <div class="card text-white bg-danger mb-3" >
-  <div class="card-header">Clientes</div>
+  <h1 class="card-header">Clientes</h1>
   <div class="card-body">
-    <h5 class="card-title">Listado de clientes</h5>
+    <h4 class="card-title">Listado de clientes</h4>
 
-    <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clientes/form']">Crear Cliente</button>
-
+    <button class="btn btn-rounded btn-primary d-grid gap-2 col-6 mx-auto" type="button" [routerLink]="['/clientes/form']">Crear Cliente</button>
+    <br><br>
     <table class="table table-bordered table-striped">
       <thead>
       <tr>
@@ -13,6 +15,8 @@
         <th>Apellido</th>
         <th>Email</th>
         <th>Fecha</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
       </tr>
       </thead>
 
@@ -29,3 +33,5 @@
 
   </div>
 </div>
+
+<br><br><br><br><br><br>

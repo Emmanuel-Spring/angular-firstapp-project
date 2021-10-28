@@ -1,37 +1,48 @@
-<div class="card bg-black text-white">
-  <div class="card-header">{{ titulo }}</div>
+<br><br>
+<div class="card bg-black text-primary pt-5">
+  <h1 class="card-header">{{ titulo }}</h1>
   <div class="card-body"></div>
+
+  <br><br>
 
   <form (ngSubmit)= "create()">
     <div class="form-group row">
-      <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
-      <div class="col-sm-6">
+      <label for="nombre" class="col-form-label col-sm-3">Nombre</label>
+      <div class="col-sm-8">
         <input type="text" class="form-control" [(ngModel)]="cliente.nombre" name="nombre">
       </div>
     </div>
-
+    <br><br>
     <div class="form-group row">
-      <label for="apellido" class="col-form-label col-sm-2">Apellido</label>
-      <div class="col-sm-6">
+      <label for="apellido" class="col-form-label col-sm-3">Apellido</label>
+      <div class="col-sm-8">
         <input type="text" class="form-control" [(ngModel)]="cliente.apellido" name="apellido">
       </div>
     </div>
 
+    <br><br>
+
     <div class="form-group row">
-      <label for="email" class="col-form-label col-sm-2">Email</label>
-      <div class="col-sm-6">
+      <label for="email" class="col-form-label col-sm-3">Email</label>
+      <div class="col-sm-8">
         <input type="text" class="form-control" [(ngModel)]="cliente.email" name="email">
       </div>
     </div>
 
-
+    <br><br><br><br>
     <div class="form-group row">
-      <div class="col-sm-6">
-        <button class="btn btn-primary" role="button">Crear</button>
+      <div class="col-sm-12">
+        <button class="btn btn-primary btn-lg" role="button">Crear cliente</button>
       </div>
     </div>
-
+    <br><br><br><br>
   </form>
 
 
+</div>
+
+<br><br><br><br> <br><br><br><br> <br><br><br><br><br><br><br><br> <br><br><br><br> <br><br><br><br>
+
+<div class="mx-auto" style="width: 200px; ">
+  <h4>Centered element</h4>
 </div>
