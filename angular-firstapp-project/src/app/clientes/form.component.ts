@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core'
-import {Cliente} from './cliente'
-import {ClienteService} from "./cliente.service"
-import { Router } from "@angular/router"
-import Swal from 'sweetalert2'
-
-function swal(nuevoCliente: string, s: string, success: string) { }
+import { Component, OnInit } from '@angular/core';
+import { Cliente } from './cliente';
+import { ClienteService } from './cliente.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form',
@@ -15,18 +13,41 @@ export class FormComponent implements OnInit {
   public cliente: Cliente = new Cliente();
   public titulo:string = "Crear Cliente";
 
+  constructor (private clienteService: ClienteService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute) { }
 
-  constructor(private clienteService: ClienteService,
-              private router: Router) { }
+  ngOnInit() {
+    this.cargarCliente()
+  }
 
-  ngOnInit(): void { }
+  cargarCliente():  void {
+    this.activatedRoute.params.subscribe(params => {
+      let id = params['id']
+      if (id) {
+        this.clienteService.getCliente().subscribe((cliente) => this.cliente = cliente)   // id
+      }
+    })
+  }
 
-  public create(): void {
+  create(): void {
     this.clienteService.create(this.cliente)
       .subscribe(cliente => {
-        this.router.navigate(['/clientes'])
-        swal('Nuevo cliente', `Cliente ${cliente.nombre} creado con éxito!`, `Success!!!`)
-      }
-    );
+          this.router.navigate(['/clientes']),
+            swal.fire('Nuevo cliente', `Cliente ${cliente.nombre} creado con éxito!`, 'success')
+        }
+      );
   }
+
+
+  update(): void {
+    this.clienteService.create(this.cliente)
+      .subscribe(cliente => {
+          this.router.navigate(['/clientes'])
+            swal.fire('Cliente Actualizado', `Cliente ${cliente.nombre} actualizado con éxito!`, 'success')
+        }
+      );
+  }
+
+
 }

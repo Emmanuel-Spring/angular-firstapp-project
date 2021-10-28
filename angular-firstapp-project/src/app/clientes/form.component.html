@@ -32,7 +32,11 @@
     <br><br><br><br>
     <div class="form-group row">
       <div class="col-sm-12">
-        <button class="btn btn-primary btn-lg" role="button">Crear cliente</button>
+        <button class="btn btn-primary btn-lg" role="button" (click)='create()' *ngIf="!cliente.id else elseBlock" >Crear cliente</button>
+
+        <ng-template #elseBlock>
+        <button class="btn btn-warning btn-lg" role="button" (click)='update()'>Editar</button>
+        </ng-template>
       </div>
     </div>
     <br><br><br><br>
