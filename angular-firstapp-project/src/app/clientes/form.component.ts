@@ -4,9 +4,7 @@ import {ClienteService} from "./cliente.service"
 import { Router } from "@angular/router"
 import Swal from 'sweetalert2'
 
-function swal(nuevoCliente: string, s: string, success: string) {
-  
-}
+function swal(nuevoCliente: string, s: string, success: string) { }
 
 @Component({
   selector: 'app-form',
