@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.talentyco</groupId>
-	<artifactId>angular-firstapp-projectspringboot</artifactId>
+	<artifactId>pringboot-firstapp-projects</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>angular-firstapp-projectspringboot</name>
 	<description>Project for Spring Boot Clientes portal de clientes</description>
